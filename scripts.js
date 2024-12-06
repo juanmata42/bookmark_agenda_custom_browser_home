@@ -46,7 +46,16 @@ const links = [
     { "text": "Notion", "url": "https://www.notion.so/", "iconUrl": "icons/notion.png" },
     { "text": "AWS", "url": "https://aws.amazon.com/es/?nc2=h_lg", "iconUrl": "icons/aws.png" },
 ];
+const linkPages = [
+    {title: "Favoritos", icon: "icons/favorites.png", color: red, links:[
+        { "text": "ChatGPT", "url": "https://chatgpt.com/", "iconUrl": "icons/chatgpt.png" },
+        { "text": "Figma", "url": "https://www.figma.com", "iconUrl": "icons/figma.png" },
+        { "text": "GitHub", "url": "https://github.com/juanmata42", "iconUrl": "icons/github.png" },
+        { "text": "Calendar", "url": "https://calendar.google.com/calendar/u/0/r", "iconUrl": "icons/calendar.png" },
+        { "text": "Google Keep", "url": "https://keep.google.com/#home", "iconUrl": "icons/keep.png" },
+    ]},
 
+]
 // Array of image paths. Add more images to the array to display them randomly
 // Don't just use the biggest res possible, since loading times will be longer. 
 // In my case, a 1000x750 px jpg image is more than enough, i can't appreciate the pixels on my 1920x1080 screen. it weights 329kb
@@ -105,19 +114,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Get the container div by its ID
     const mainContainer = document.getElementById('main-container');
-
-    // Clear previous images (if any) before appending the new one
-    mainContainer.innerHTML = '';
-
+    const calendarContainer = document.getElementById('calendar-container');
     // Append the new img element to the container
-    mainContainer.appendChild(pictureContainer);
+    calendarContainer.appendChild(pictureContainer);
 
-    // Create a new div for the links
-    const linksContainer = document.createElement('div');
-    linksContainer.className = 'links-container';  // Set a class for styling if needed
+    // Get links container
+    const linksContainer = document.getElementById('links-container');
 
     // Iterate over the links array to create anchor elements
-    links.forEach(link => {
+    /* links.forEach(link => {
         const a = document.createElement('a');
         a.href = link.url;  // Set the href attribute
         a.target = '_self';  // Make the link open in the same tab
@@ -138,13 +143,13 @@ document.addEventListener("DOMContentLoaded", function () {
         a.appendChild(p);  // Append the paragraph to the anchor
 
         linksContainer.appendChild(a);  // Append the anchor to the links container
-    });
+    }); */
 
     // Append the links container to the main container
     mainContainer.appendChild(linksContainer);
 });
 
-function setLinksContainerHeight() {
+/* function setLinksContainerHeight() {
     const pictureContainer = document.querySelector('.aside-picture');
     const linksContainer = document.querySelector('.links-container');
     // get screen width
@@ -157,7 +162,7 @@ function setLinksContainerHeight() {
         linksContainer.style.maxHeight = `${pictureHeight}px`;
     }
 
-}
+} */
 // Run the function on page load and page resize
 window.addEventListener('load', setLinksContainerHeight);
 window.addEventListener('resize', setLinksContainerHeight);

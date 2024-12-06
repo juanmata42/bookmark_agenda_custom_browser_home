@@ -188,10 +188,10 @@ html {
     --text-size-desktop: 18px;
     --text-size-mobile: 16px;
 
-    /* Cube side size (The base unit for the layout) */
-    --cube-size: 2.6vw;
-    --cube-max-size: 40px;
-    --cube-min-size: 30px;
+    /* Dot side size (The base unit for the layout) */
+    --dot-size: 10px;
+    --cube-max-size: 10px;
+    --cube-min-size: 10px;
 }
 
 /* Font */
@@ -205,12 +205,25 @@ body {
     font-family: 'cantarell', sans-serif;
     background-color: var(--bg-dim);
     color: var(--fg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     position: relative;
-    padding-top: 120px;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: calc(6 * var(--dot-size));
+    gap: calc(2 * var(--dot-size))
+}
+
+.calendar-container {
+    width: calc(40% - var(--dot-size));
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .color-box__container {
@@ -218,50 +231,44 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: var(--cube-max-size);
+    padding: var(--dot-size);
     width: 100%;
-    max-width: 1480px;
-    position: absolute;
-    top: 0;
 }
 
 .color-box {
-    max-width: var(--cube-max-size);
-    max-height: var(--cube-max-size);
-    width: var(--cube-size);
-    height: var(--cube-size);
+    width: var(--dot-size);
+    height: var(--dot-size);
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 50%;
 }
 
-.main-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
+.events {
+    background-color: var(--fg);
     width: 100%;
-    position: relative;
-    gap: 100px;
-    max-width: 1480px;
-    padding: var(--cube-size);
+    flex-grow: 1;
+    border-radius: var(--dot-size) var(--dot-size) 0 0;
 }
 
 .picture-container {
-    flex: 0 0 50%;
+    width: 100%;
+    height: auto;
 }
 
 .picture-container img {
     width: 100%;
     height: auto;
+    border-radius: 0 0 var(--dot-size) var(--dot-size);
 }
 
 .links-container {
-    flex: 1;
+    width: calc(60% - var(--dot-size));
+    height: 100%;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: flex-end;
-    gap: calc(var(--cube-size) / 2);
+    background-color: var(--fg);
+    border-radius: var(--dot-size);
 }
 
 .link-item {
@@ -285,8 +292,8 @@ body {
     align-items: center;
     max-height: var(--cube-max-size);
     max-width: var(--cube-max-size);
-    height: var(--cube-size);
-    width: var(--cube-size);
+    height: var(--dot-size);
+    width: var(--dot-size);
     min-width: var(--cube-min-size);
     min-height: var(--cube-min-size);
     border-radius: 5px;
@@ -304,7 +311,7 @@ body {
     color: var(--bg-dim);
     max-height: var(--cube-max-size);
     min-height: var(--cube-min-size);
-    height: var(--cube-size);
+    height: var(--dot-size);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -321,7 +328,7 @@ body {
     }
 
     .color-box__container {
-        padding: var(--cube-size);
+        padding: var(--dot-size);
     }
 
     .main-container {
@@ -331,7 +338,7 @@ body {
     }
 
     .links-container {
-        gap: var(--cube-size);
+        gap: var(--dot-size);
         flex-direction: row;
         justify-content: space-between;
         align-content: flex-start;
