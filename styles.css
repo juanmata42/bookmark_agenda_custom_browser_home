@@ -218,11 +218,12 @@ body {
     height: 100%;
     position: relative;
     padding: calc(6 * var(--dot-size));
-    gap: calc(2 * var(--dot-size))
+    gap: calc(2 * var(--dot-size));
+    justify-content: space-between;
 }
 
 .calendar-container {
-    width: calc(40% - var(--dot-size));
+    width: calc(35% - var(--dot-size));
     height: 100%;
     position: relative;
     display: flex;
