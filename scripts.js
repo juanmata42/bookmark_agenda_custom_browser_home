@@ -72,25 +72,6 @@ const linkPages = [
             { "text": "Miro", "url": "https://miro.com/app/dashboard/", "iconUrl": "icons/miro.png" },
             { "text": "Notion", "url": "https://www.notion.so/", "iconUrl": "icons/notion.png" },
             { "text": "AWS", "url": "https://aws.amazon.com/es/?nc2=h_lg", "iconUrl": "icons/aws.png" },
-            { "text": "Calendar", "url": "https://calendar.google.com/calendar/u/0/r", "iconUrl": "icons/calendar.png" },
-            { "text": "ChatGPT", "url": "https://chatgpt.com/", "iconUrl": "icons/chatgpt.png" },
-            { "text": "Confluence", "url": "https://www.atlassian.com/es/software/confluence", "iconUrl": "icons/confluence.png" },
-            { "text": "Google Drive", "url": "https://drive.google.com/drive/shared-with-me", "iconUrl": "icons/drive.png" },
-            { "text": "Factorial", "url": "https://app.factorialhr.com/dashboard", "iconUrl": "icons/factorial.png" },
-            { "text": "Figma", "url": "https://www.figma.com", "iconUrl": "icons/figma.png" },
-            { "text": "GitHub", "url": "https://github.com/juanmata42", "iconUrl": "icons/github.png" },
-            { "text": "Gmail", "url": "https://mail.google.com/mail/u/0/#inbox", "iconUrl": "icons/gmail.png" },
-            { "text": "Jira", "url": "https://www.atlassian.com/es/software/jira", "iconUrl": "icons/jira.png" },
-            { "text": "Google Keep", "url": "https://keep.google.com/#home", "iconUrl": "icons/keep.png" },
-            { "text": "Miro", "url": "https://miro.com/app/dashboard/", "iconUrl": "icons/miro.png" },
-            { "text": "Notion", "url": "https://www.notion.so/", "iconUrl": "icons/notion.png" },
-            { "text": "AWS", "url": "https://aws.amazon.com/es/?nc2=h_lg", "iconUrl": "icons/aws.png" },
-            { "text": "Calendar", "url": "https://calendar.google.com/calendar/u/0/r", "iconUrl": "icons/calendar.png" },
-            { "text": "ChatGPT", "url": "https://chatgpt.com/", "iconUrl": "icons/chatgpt.png" },
-            { "text": "Confluence", "url": "https://www.atlassian.com/es/software/confluence", "iconUrl": "icons/confluence.png" },
-            { "text": "Google Drive", "url": "https://drive.google.com/drive/shared-with-me", "iconUrl": "icons/drive.png" },
-            { "text": "Factorial", "url": "https://app.factorialhr.com/dashboard", "iconUrl": "icons/factorial.png" },
-            { "text": "Figma", "url": "https://www.figma.com", "iconUrl": "icons/figma.png" },
         ]
     },
     // 2. Productivity: Tools for organizing and managing tasks
@@ -264,18 +245,19 @@ document.addEventListener("DOMContentLoaded", function () {
             linkItem.className = 'link-item'; // Add a class for styling
             linkItem.href = link.url; // Set the link URL
             linkItem.target = '_blank'; // Open links in a new tab
-
+            const linkIconContainer = document.createElement('div');
+            linkIconContainer.className = 'link-icon-container'; // Add a class for styling
             const linkIcon = document.createElement('img');
             linkIcon.className = 'link-icon'; // Add a class for styling
             linkIcon.src = link.iconUrl; // Set the link's icon
             linkIcon.alt = `${link.text} Icon`;
-
+            linkIconContainer.appendChild(linkIcon);
             const linkText = document.createElement('span');
             linkText.className = 'link-text'; // Add a class for styling
             linkText.textContent = link.text;
 
             // Append icon and text to the link
-            linkItem.appendChild(linkIcon);
+            linkItem.appendChild(linkIconContainer);
             linkItem.appendChild(linkText);
 
             // Append the link to the indexTab
@@ -287,37 +269,34 @@ document.addEventListener("DOMContentLoaded", function () {
         // Append title, icon, and indexTab to the linksPage
         linksPage.appendChild(pageInteriorContainer);
         linksPage.appendChild(indexTab);
-
+        // get height of link-item
+        const linkHeight = document.querySelector('.link-item').clientHeight;
+        addRowBorders(pageInteriorContainer, linkHeight, page.color, 90);
         // Append the linksPage to the linksContainer
     });
-    // Iterate over the links array to create anchor elements
-    /* links.forEach(link => {
-        const a = document.createElement('a');
-        a.href = link.url;  // Set tzzhe href attribute
-        a.target = '_self';  // Make the link open in the same tab
-        a.className = 'link-item';  // Add a class for styling
-
-        const div = document.createElement('div');  // Create a div element
-        div.className = 'icon-container';  // Add a class for the icon container
-        a.appendChild(div);  // Append the div to the anchor
-
-        const img = document.createElement('img');  // Create an img element
-        img.src = link.iconUrl;  // Set the src attribute to the icon URL
-        img.className = 'icon';  // Add a class for the icon
-        div.appendChild(img);  // Append the image to the anchor
-
-        const p = document.createElement('p');  // Create a paragraph element
-        p.textContent = link.text;  // Set the text of the link
-        p.className = 'link-text';  // Add a class for the text
-        a.appendChild(p);  // Append the paragraph to the anchor
-
-        linksContainer.appendChild(a);  // Append the anchor to the links container
-    }); */
 
     // Append the links container to the main container
     mainContainer.appendChild(linksContainer);
 });
+function addRowBorders(container, linkHeight, color, paddingTop) {
+    const containerHeight = container.clientHeight;
+    const rowHeight = linkHeight + 16; // Link height + gap
+    const totalRows = Math.floor((containerHeight - paddingTop) / rowHeight);
 
+    for (let i = 1; i <= totalRows; i++) {
+        const border = document.createElement('div');
+        border.style.position = 'absolute';
+        border.style.top = `${(i * rowHeight) + paddingTop}px`;
+        border.style.left = '0';
+        border.style.width = '100%';
+        border.style.height = '1px';
+        border.style.zIndex = 2;
+        border.style.backgroundColor = color; // Use your desired color
+        container.appendChild(border);
+    }
+}/* 
+window.addEventListener('load', addRowBorders(linksContainer, linksGrid, 50));
+window.addEventListener('resize', addRowBorders(linksContainer, linksGrid, 50)); */
 /* function setLinksContainerHeight() {
     const pictureContainer = document.querySelector('.aside-picture');
     const linksContainer = document.querySelector('.links-container');
