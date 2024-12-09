@@ -211,6 +211,11 @@ body {
     position: relative;
 }
 
+.svgIcon {
+    color: var(--text);
+    fill: var(--text);
+}
+
 .main-container {
     display: flex;
     flex-wrap: wrap;
@@ -405,6 +410,7 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 16px;
     padding: 20px;
+    padding-left: calc(3 * var(--dot-size));
     border-collapse: collapse;
     border-color: inherit;
 }
@@ -427,7 +433,7 @@ body {
 }
 
 .link-item:hover {
-    background-color: var(--bg3);
+    background-color: var(--gray2);
     /* Highlight link on hover */
 }
 
