@@ -294,7 +294,21 @@ body {
     position: relative;
     height: 100%;
     width: 100%;
+    padding-left: calc(6 * var(--dot-size));
 }
+
+.page-interior-container:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(6 * var(--dot-size));
+    height: 100%;
+    z-index: 0;
+    border-right: 6px double;
+    border-color: inherit;
+}
+
 
 #page-0 {
     z-index: 1;
@@ -372,7 +386,7 @@ body {
     gap: var(--dot-size);
     padding: calc(4 * var(--dot-size));
     width: 100%;
-    border-bottom: 6px double;
+    border-bottom: 2px solid;
 
 }
 
