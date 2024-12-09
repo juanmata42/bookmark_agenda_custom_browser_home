@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const linkItem = document.createElement('a');
             linkItem.className = 'link-item'; // Add a class for styling
             linkItem.href = link.url; // Set the link URL
-            linkItem.target = '_blank'; // Open links in a new tab
+            linkItem.target = '_self'; // Open links in same tab
             const linkIconContainer = document.createElement('div');
             linkIconContainer.className = 'link-icon-container'; // Add a class for styling
             const linkIcon = document.createElement('img');
