@@ -267,7 +267,7 @@ body {
 }
 
 .links-container {
-    width: calc(60% - var(--dot-size));
+    width: calc(65% - var(--dot-size));
     height: 100%;
     position: relative;
 }
