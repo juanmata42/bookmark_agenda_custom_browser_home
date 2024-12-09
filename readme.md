@@ -76,14 +76,64 @@ You can easily customize this homepage to match your style. Below are step-by-st
 - Save your changes, and refresh the page to see the new colors.
 
 ### 2. Add or Change Links and Icons
-- To add or modify links, edit the `links` array in `scripts.js`.
-- Each link should have `text`, `url`, and `iconUrl` properties. For example:
-    ```javascript
-    const links = [
-        { "text": "My Link", "url": "https://example.com", "iconUrl": "icons/my_icon.png" }
-    ];
-    ```
-- Place the icon image in the `icons` folder and reference it by name.
+
+To add or modify links, edit the `linkPages` array in `scripts.js`. Each category is defined with the following structure:
+
+```javascript
+const linkPages = [
+    {
+        title: "Category Title",   // Name of the category
+        icon: "icons/category-icon.svg",  // Icon for the category
+        color: colors.bg0,    // The background color for the category
+        links: [   // Links inside the category
+            { 
+                text: "Link Text",  // Text to display
+                url: "https://link-url.com",  // URL to open
+                iconUrl: "icons/link-icon.svg" // Icon for the link
+            },
+            // Add more links here...
+        ]
+    },
+    // Add more categories as needed...
+];
+```
+
+### Example:
+
+```javascript
+const linkPages = [
+    {
+        title: "Favorites",
+        icon: "icons/favorites.svg",
+        color: colors.red,
+        links: [
+            { "text": "ChatGPT", "url": "https://chatgpt.com/", "iconUrl": "icons/chatgpt.png" },
+            { "text": "Figma", "url": "https://www.figma.com", "iconUrl": "icons/figma.png" },
+            { "text": "GitHub", "url": "https://github.com/juanmata42", "iconUrl": "icons/github.png" }
+        ]
+    },
+    {
+        title: "Productivity",
+        icon: "icons/productivity.svg",
+        color: colors.green,
+        links: [
+            { "text": "Notion", "url": "https://www.notion.so/", "iconUrl": "icons/notion.png" },
+            { "text": "Google Keep", "url": "https://keep.google.com", "iconUrl": "icons/keep.png" }
+        ]
+    }
+];
+```
+
+#### Key Fields:
+- **`title`**: The name of the category (e.g., "Favorites", "Work").
+- **`icon`**: The path to the category's icon.
+- **`color`**: The color applied to the category's background (choose from the predefined `colors` object).
+- **`links`**: An array of individual links within this category. Each link has:
+  - **`text`**: The name or description of the link.
+  - **`url`**: The URL for the link.
+  - **`iconUrl`**: The path to the link's icon (must be placed in the `icons` folder).
+
+After modifying the `linkPages` array, save your changes and refresh the page to see the updated categories and links.
 
 ### 3. Add Background Images
 - Place your preferred background images in the `pics` folder.

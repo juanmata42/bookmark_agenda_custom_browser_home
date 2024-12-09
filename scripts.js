@@ -87,7 +87,7 @@ const linkPages = [
     {
         title: "Desarrollo",
         icon: "icons/development.svg",
-        color: colors.purple,
+        color: colors.yellow,
         links: [
             { "text": "GitHub", "url": "https://github.com/juanmata42", "iconUrl": "icons/github.png" },
             { "text": "ChatGPT", "url": "https://chatgpt.com/", "iconUrl": "icons/chatgpt.png" },
@@ -98,7 +98,7 @@ const linkPages = [
     {
         title: "Comunicación",
         icon: "icons/communication.svg",
-        color: colors.yellow,
+        color: colors.purple,
         links: [
             { "text": "Gmail", "url": "https://mail.google.com/mail/u/0/#inbox", "iconUrl": "icons/gmail.png" },
         ]
@@ -269,23 +269,4 @@ function addRowBorders(container, linkHeight, color, paddingTop) {
         border.style.backgroundColor = color; // Use your desired color
         container.appendChild(border);
     }
-}/* 
-window.addEventListener('load', addRowBorders(linksContainer, linksGrid, 50));
-window.addEventListener('resize', addRowBorders(linksContainer, linksGrid, 50)); */
-/* function setLinksContainerHeight() {
-    const pictureContainer = document.querySelector('.aside-picture');
-    const linksContainer = document.querySelector('.links-container');
-    // get screen width
-    const screenWidth = window.innerWidth;
-    if (screenWidth > 1024 && pictureContainer && linksContainer) {
-        // Get the height of the picture container
-        const pictureHeight = pictureContainer.offsetHeight;
-
-        // Set it as the max-height of the links container
-        linksContainer.style.maxHeight = `${pictureHeight}px`;
-    }
-
-} */
-// Run the function on page load and page resize
-/* window.addEventListener('load', setLinksContainerHeight);
-window.addEventListener('resize', setLinksContainerHeight); */
+}
