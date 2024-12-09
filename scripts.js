@@ -30,22 +30,6 @@ const colors = {
     'fg': '#D3C6AA'
 };
 
-// Array of links. Each link is an object with text, url, and iconUrl properties
-const links = [
-    { "text": "Calendar", "url": "https://calendar.google.com/calendar/u/0/r", "iconUrl": "icons/calendar.png" },
-    { "text": "ChatGPT", "url": "https://chatgpt.com/", "iconUrl": "icons/chatgpt.png" },
-    { "text": "Confluence", "url": "https://www.atlassian.com/es/software/confluence", "iconUrl": "icons/confluence.png" },
-    { "text": "Google Drive", "url": "https://drive.google.com/drive/shared-with-me", "iconUrl": "icons/drive.png" },
-    { "text": "Factorial", "url": "https://app.factorialhr.com/dashboard", "iconUrl": "icons/factorial.png" },
-    { "text": "Figma", "url": "https://www.figma.com", "iconUrl": "icons/figma.png" },
-    { "text": "GitHub", "url": "https://github.com/juanmata42", "iconUrl": "icons/github.png" },
-    { "text": "Gmail", "url": "https://mail.google.com/mail/u/0/#inbox", "iconUrl": "icons/gmail.png" },
-    { "text": "Jira", "url": "https://www.atlassian.com/es/software/jira", "iconUrl": "icons/jira.png" },
-    { "text": "Google Keep", "url": "https://keep.google.com/#home", "iconUrl": "icons/keep.png" },
-    { "text": "Miro", "url": "https://miro.com/app/dashboard/", "iconUrl": "icons/miro.png" },
-    { "text": "Notion", "url": "https://www.notion.so/", "iconUrl": "icons/notion.png" },
-    { "text": "AWS", "url": "https://aws.amazon.com/es/?nc2=h_lg", "iconUrl": "icons/aws.png" },
-];
 // Using https://www.flaticon.com/ for icons on this case
 const linkPages = [
     // 1. Favorites: Easy access to frequently used links
@@ -59,19 +43,10 @@ const linkPages = [
             { "text": "GitHub", "url": "https://github.com/juanmata42", "iconUrl": "icons/github.png" },
             { "text": "Calendar", "url": "https://calendar.google.com/calendar/u/0/r", "iconUrl": "icons/calendar.png" },
             { "text": "Google Keep", "url": "https://keep.google.com/#home", "iconUrl": "icons/keep.png" },
-            { "text": "Calendar", "url": "https://calendar.google.com/calendar/u/0/r", "iconUrl": "icons/calendar.png" },
             { "text": "ChatGPT", "url": "https://chatgpt.com/", "iconUrl": "icons/chatgpt.png" },
             { "text": "Confluence", "url": "https://www.atlassian.com/es/software/confluence", "iconUrl": "icons/confluence.png" },
             { "text": "Google Drive", "url": "https://drive.google.com/drive/shared-with-me", "iconUrl": "icons/drive.png" },
             { "text": "Factorial", "url": "https://app.factorialhr.com/dashboard", "iconUrl": "icons/factorial.png" },
-            { "text": "Figma", "url": "https://www.figma.com", "iconUrl": "icons/figma.png" },
-            { "text": "GitHub", "url": "https://github.com/juanmata42", "iconUrl": "icons/github.png" },
-            { "text": "Gmail", "url": "https://mail.google.com/mail/u/0/#inbox", "iconUrl": "icons/gmail.png" },
-            { "text": "Jira", "url": "https://www.atlassian.com/es/software/jira", "iconUrl": "icons/jira.png" },
-            { "text": "Google Keep", "url": "https://keep.google.com/#home", "iconUrl": "icons/keep.png" },
-            { "text": "Miro", "url": "https://miro.com/app/dashboard/", "iconUrl": "icons/miro.png" },
-            { "text": "Notion", "url": "https://www.notion.so/", "iconUrl": "icons/notion.png" },
-            { "text": "AWS", "url": "https://aws.amazon.com/es/?nc2=h_lg", "iconUrl": "icons/aws.png" },
         ]
     },
     // 2. Productivity: Tools for organizing and managing tasks

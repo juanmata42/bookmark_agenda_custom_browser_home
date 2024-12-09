@@ -211,11 +211,6 @@ body {
     position: relative;
 }
 
-.svgIcon {
-    color: var(--text);
-    fill: var(--text);
-}
-
 .main-container {
     display: flex;
     flex-wrap: wrap;
